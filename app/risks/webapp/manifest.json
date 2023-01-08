@@ -115,6 +115,7 @@
             "settings": {
               "entitySet": "Risks",
               "variantManagement": "Page",
+              "initialLoad": "Enabled",
               "navigation": {
                 "Risks": {
                   "detail": {
