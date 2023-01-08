@@ -46,6 +46,9 @@ annotate RiskService.Risks with @(
 			{
 				Value: impact,
 				Criticality: criticality
+			},
+			{
+				Value: descr			
 			}
 		],
 		Facets: [
