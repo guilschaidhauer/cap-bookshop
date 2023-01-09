@@ -3,7 +3,9 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    xmlns:semantic="sap.f.semantic"
+    xmlns:uxap="sap.uxap"
+    xmlns:blockcolor="sap.uxap.sample.SharedBlocks">
 
     <semantic:SemanticPage
         id="page"
@@ -25,6 +27,16 @@
             <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
         </semantic:sendEmailAction>
 
+        <uxap:ObjectPageSection titleUppercase="false" title="Main">
+            <uxap:subSections>
+                <uxap:ObjectPageSubSection>
+                    <uxap:blocks>
+                    </uxap:blocks>
+                </uxap:ObjectPageSubSection>
+            </uxap:subSections>
+		</uxap:ObjectPageSection>
+
+        <!--
         <semantic:content>
             <l:VerticalLayout>
                 <ObjectStatus title="Description" text="{description}"/>
@@ -32,7 +44,7 @@
                 <ObjectStatus title="Timeline" text="{timeline}"/>
             </l:VerticalLayout>
         </semantic:content>
-
+        -->
 
     </semantic:SemanticPage>
 
