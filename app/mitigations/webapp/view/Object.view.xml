@@ -18,8 +18,14 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-            <ObjectNumber
-            />
+            <ObjectNumber />
+                <Toolbar>
+                    <ToolbarSpacer />
+                        <Button id="edit" text="{i18n>EDIT}" enabled="true" press="_onEditPress" />
+                        <Button id="delete" text="{i18n>DELETE}" enabled="true" press="_onDeletePress" />
+                        <Button id="save" text="{i18n>SAVE}" type="Emphasized" visible="false" press="_onSavePress" />
+                        <Button id="cancel" text="{i18n>CANCEL}" visible="false" type="Reject" press="_onCancelPress" />
+                </Toolbar>
         </semantic:headerContent>
 
         <VBox class="sapUiSmallMargin">
@@ -39,7 +45,7 @@
                 columnsXL="1"
                 columnsL="1"
                 columnsM="1"
-                singleContainerFullSize="false" >
+                singleContainerFullSize="false">
                 <f:content>
                     <Label text="Description" />
                     <Text id="descriptionText" text="{description}" />
