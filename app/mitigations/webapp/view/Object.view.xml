@@ -26,7 +26,7 @@
             <f:SimpleForm id="SimpleFormDisplay354"
                 editable="false"
                 layout="ResponsiveGridLayout"
-                title="{i18n>BOOK_INFO}"
+                title="Main"
                 labelSpanXL="3"
                 labelSpanL="3"
                 labelSpanM="3"
@@ -41,12 +41,12 @@
                 columnsM="1"
                 singleContainerFullSize="false" >
                 <f:content>
-                    <Label text="{i18n>NAME}" />
-                    <Text id="nameText" text="{Book>/name}" />
-                    <Label text="{i18n>DESCRIPTION}" />
-                    <Text id="descriptionText" text="{Book>/description}" />
-                    <Label text="{i18n>PRICE}" />
-                    <Text id="priceText" text="{Book>/price}" />
+                    <Label text="Description" />
+                    <Text id="descriptionText" text="{description}" />
+                    <Label text="Owner" />
+                    <Text id="ownerText" text="{owner}" />
+                    <Label text="Timeline" />
+                    <Text id="timelineText" text="{timeline}" />
                 </f:content>
             </f:SimpleForm>
         </VBox>
