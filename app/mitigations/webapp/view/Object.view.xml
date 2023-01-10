@@ -47,11 +47,11 @@
                 columnsM="1"
                 singleContainerFullSize="false">
                 <f:content>
-                    <Label text="Description" />
+                    <Label text="{i18n>DESCRIPTION}" />
                     <Text id="descriptionText" text="{description}" />
-                    <Label text="Owner" />
+                    <Label text="{i18n>OWNER}" />
                     <Text id="ownerText" text="{owner}" />
-                    <Label text="Timeline" />
+                    <Label text="{i18n>TIMELINE}" />
                     <Text id="timelineText" text="{timeline}" />
                 </f:content>
             </f:SimpleForm>
