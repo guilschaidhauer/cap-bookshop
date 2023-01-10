@@ -2,6 +2,7 @@
     controllerName="ns.mitigations.controller.Object"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
 
@@ -21,16 +22,34 @@
             />
         </semantic:headerContent>
 
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
-        <semantic:content>
-            <l:VerticalLayout>
-                <ObjectStatus title="Description" text="{description}"/>
-                <ObjectStatus title="Owner" text="{owner}"/>
-                <ObjectStatus title="Timeline" text="{timeline}"/>
-            </l:VerticalLayout>
-        </semantic:content>
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm id="SimpleFormDisplay354"
+                editable="false"
+                layout="ResponsiveGridLayout"
+                title="{i18n>BOOK_INFO}"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false" >
+                <f:content>
+                    <Label text="{i18n>NAME}" />
+                    <Text id="nameText" text="{Book>/name}" />
+                    <Label text="{i18n>DESCRIPTION}" />
+                    <Text id="descriptionText" text="{Book>/description}" />
+                    <Label text="{i18n>PRICE}" />
+                    <Text id="priceText" text="{Book>/price}" />
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
     </semantic:SemanticPage>
 
 </mvc:View>
