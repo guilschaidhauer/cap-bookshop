@@ -143,6 +143,7 @@ sap.ui.define([
 
 			// Show the appropriate action buttons
 			oView.byId("edit").setVisible(!bEdit);
+            oView.byId("delete").setVisible(!bEdit);
 			oView.byId("save").setVisible(bEdit);
 			oView.byId("cancel").setVisible(bEdit);
 
