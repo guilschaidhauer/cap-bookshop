@@ -67,7 +67,8 @@ sap.ui.define([
          */
         _onObjectMatched : function (oEvent) {
             var sObjectId =  oEvent.getParameter("arguments").objectId;
-            this._bindView("/Mitigations" + sObjectId);
+            this.sObjectId = sObjectId;
+            this._bindView("/Mitigations" + this.sObjectId);
         },
 
         /**
@@ -121,6 +122,20 @@ sap.ui.define([
 			this._oMitigation = Object.assign({}, this.getModel("objectView").getData());
 			this._toggleButtonsAndView(true);
             console.log("Hello");
+		},
+
+        _onCancelPress : function () {
+			//Restore the data
+            this._setMitigationModel(this._oMitigation);
+
+			this._toggleButtonsAndView(false);
+		},
+
+        _setMitigationModel: function (mitigation) {
+			var oModel = new JSONModel(mitigation);
+			this.getView().setModel(oModel, "objectView");
+			this.getView().getModel().refresh();
+			this.byId('edit').setEnabled(true);
 		},
 
         _toggleButtonsAndView : function (bEdit) {
