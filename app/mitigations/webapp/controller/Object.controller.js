@@ -105,7 +105,7 @@ sap.ui.define([
                 return;
             }
 
-            var oResourceBundle = this.getResourceBundle(),
+            /*var oResourceBundle = this.getResourceBundle(),
                 oObject = oView.getBindingContext().getObject(),
                 sObjectId = oObject.ID,
                 sObjectName = oObject.Mitigations;
@@ -114,7 +114,7 @@ sap.ui.define([
                 oViewModel.setProperty("/shareSendEmailSubject",
                     oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
                 oViewModel.setProperty("/shareSendEmailMessage",
-                    oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
+                    oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));*/
         },
 
         _onEditPress : function () {
