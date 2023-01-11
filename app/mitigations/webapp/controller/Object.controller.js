@@ -2,8 +2,9 @@ sap.ui.define([
     "./BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/routing/History",
+    "sap/ui/core/Fragment", 
     "../model/formatter"
-], function (BaseController, JSONModel, History, formatter) {
+], function (BaseController, JSONModel, History, Fragment, formatter) {
     "use strict";
 
     return BaseController.extend("ns.mitigations.controller.Object", {
@@ -28,6 +29,10 @@ sap.ui.define([
                 });
             this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
             this.setModel(oViewModel, "objectView");
+
+            this._formFragments = {};
+
+            this._showFormFragment("Display");
         },
         /* =========================================================== */
         /* event handlers                                              */
@@ -109,7 +114,31 @@ sap.ui.define([
                     oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
                 oViewModel.setProperty("/shareSendEmailMessage",
                     oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
-        }
+        },
+
+        _getFormFragment: function (sFragmentName) {
+			var pFormFragment = this._formFragments[sFragmentName],
+				oView = this.getView();
+
+			if (!pFormFragment) {
+				pFormFragment = Fragment.load({
+					id: oView.getId(),
+					name: "ns.mitigations.view.fragments." + sFragmentName
+				});
+				this._formFragments[sFragmentName] = pFormFragment;
+			}
+
+			return pFormFragment;
+		},
+
+        _showFormFragment : function (sFragmentName) {
+			var oPage = this.byId("page");
+
+			oPage.removeAllContent();
+			this._getFormFragment(sFragmentName).then(function(oVBox){
+				oPage.insertContent(oVBox);
+			});
+		}
     });
 
 });
