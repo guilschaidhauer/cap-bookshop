@@ -116,6 +116,25 @@ sap.ui.define([
                     oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
         },
 
+        _onEditPress : function () {
+			//Clone the data
+			this._oMitigation = Object.assign({}, this.getModel("objectView").getData());
+			this._toggleButtonsAndView(true);
+            console.log("Hello");
+		},
+
+        _toggleButtonsAndView : function (bEdit) {
+			var oView = this.getView();
+
+			// Show the appropriate action buttons
+			oView.byId("edit").setVisible(!bEdit);
+			oView.byId("save").setVisible(bEdit);
+			oView.byId("cancel").setVisible(bEdit);
+
+			// Set the right form type
+			this._showFormFragment(bEdit ? "Change" : "Display");
+		},
+
         _getFormFragment: function (sFragmentName) {
 			var pFormFragment = this._formFragments[sFragmentName],
 				oView = this.getView();
