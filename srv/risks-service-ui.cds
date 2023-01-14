@@ -21,6 +21,11 @@ annotate RiskService.Mitigations with {
 	risks        @title: 'Risks';
 }
 
+annotate RiskService.Equipments with {
+	name         @title: 'Name';
+	description  @title: 'Description';
+}
+
 annotate RiskService.Risks with @(
 	UI: {
 		HeaderInfo: {
@@ -68,7 +73,17 @@ annotate RiskService.Risks with @(
 			]
 		}
 	},
-) {
+);
+
+annotate RiskService.Equipments with @(
+	UI: {
+		LineItem: [
+			{Value: name},
+			{Value: descr}
+		]
+	},
+)
+ {
 
 };
 

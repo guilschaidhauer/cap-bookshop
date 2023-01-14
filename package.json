@@ -16,10 +16,12 @@
   "scripts": {
     "start": "cds run",
     "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-mitigations": "cds watch --open mitigations/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-mitigations": "cds watch --open mitigations/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-equipments": "cds watch --open equipments/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
     "app/risks",
-    "app/mitigations"
+    "app/mitigations",
+    "app/equipments"
   ]
 }
