@@ -23,7 +23,7 @@ annotate RiskService.Mitigations with {
 
 annotate RiskService.Equipments with {
 	name         @title: 'Name';
-	description  @title: 'Description';
+	descr  @title: 'Description';
 }
 
 annotate RiskService.Risks with @(
