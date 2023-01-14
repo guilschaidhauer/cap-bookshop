@@ -114,6 +114,7 @@
           "options": {
             "settings": {
               "entitySet": "Equipments",
+              "initialLoad": "Enabled",
               "variantManagement": "Page",
               "navigation": {
                 "Equipments": {
