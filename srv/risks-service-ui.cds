@@ -77,11 +77,32 @@ annotate RiskService.Risks with @(
 
 annotate RiskService.Equipments with @(
 	UI: {
+		HeaderInfo: {
+			TypeName: 'Equipment',
+			TypeNamePlural: 'Equipments',
+			Title          : {
+                $Type : 'UI.DataField',
+                Value : name
+            },
+			Description : {
+				$Type: 'UI.DataField',
+				Value: descr
+			}
+		},
 		LineItem: [
 			{Value: name},
 			{Value: descr}
 		]
 	},
+	Facets: [
+			{$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'}
+		],
+		FieldGroup#Main: {
+			Data: [
+				{Value: name},
+				{Value: descr}
+			]
+		}
 )
  {
 
